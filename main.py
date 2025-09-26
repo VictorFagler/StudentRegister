@@ -27,6 +27,7 @@ while menu_active:
             print("No students registered")
     
     elif user_choice == "3":
+        print("> Sök efter student")
         search_name = input("Studentens namn: ").lower()
         found = False
         for student in students:
@@ -38,6 +39,7 @@ while menu_active:
             print("Studenten hittades inte.")
 
     elif user_choice == "4":
+        print("> Ta bort student")
         name_to_delete = input("Ta bort student:")
         found = False
 
