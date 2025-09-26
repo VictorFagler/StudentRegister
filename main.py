@@ -13,7 +13,7 @@ menu_active = True
 students = [{"name":"Victor","age": 31}, {"name":"Kalle", "age": 35}]
 
 while menu_active:
-    user_choice = input("> Välj menyval 1-4: ")
+    user_choice = input("> Välj menyval 1-5: ")
 
     if user_choice == "1":
         print("\n > Lägg till student")
@@ -25,18 +25,18 @@ while menu_active:
     elif user_choice == "2":
         print("\n > Listing all students")
         if students:
-            for stud in students:
-                print(f"- {stud['name']}, {stud['age']}")
+            for student in students:
+                print(f"- {student['name']}, {student['age']}")
         else:
             print("No students registered")
     
     elif user_choice == "3":
         search_name = input("Studentens namn: ").lower()
         found = False
-        for stud in students:
-         if stud["name"].lower() == search_name:
-             print(f"- {stud['name']}, {stud['age']} år")
-             found = True
+        for student in students:
+            if student["name"].lower() == search_name:
+                print(f"- {student['name']}, {student['age']} år")
+                found = True
 
         if not found:
             print("Studenten hittades inte.")
@@ -50,16 +50,16 @@ while menu_active:
                 students.remove(student)
                 print(f"{student['name']} har tagits bort.")
                 found = True
-                break
-            if not found:
+    
+        if not found:
                 print("Studenten hittades inte")
 
     elif user_choice == "5":
         print("> Beräkna snittålder")
         if students:
             total_age = 0
-            for stud in students:
-                total_age += stud["age"]
+            for student in students:
+                total_age += student["age"]
             average_age = total_age / len(students)
             print(f"Beräknad snittålder: {round(average_age)} år (Antal elever: {len(students)})")
 
