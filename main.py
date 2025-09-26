@@ -1,26 +1,22 @@
-
 print("1. Lägg till student")
 print("2. Lista alla studenter")
 print("3. Sök student")
 print("4. Ta bort student")
-print("4. Beräkna snittåldern")
-print("5. Avsluta")
-
-GREEN = "\033[92m"
-RESET = "\033[0m"
+print("5. Beräkna snittåldern")
+print("6. Avsluta")
 
 menu_active = True
 students = [{"name":"Victor","age": 31}, {"name":"Kalle", "age": 35}]
 
 while menu_active:
-    user_choice = input("> Välj menyval 1-5: ")
+    user_choice = input("> Välj menyval 1-6: ")
 
     if user_choice == "1":
         print("\n > Lägg till student")
         name = input("Ange studentens namn: ")
         age = int(input("Ange ålder: "))
         students.append({"name": name, "age": age})
-        print(f"{GREEN}{name, age}{RESET} har lagts till i listan.")
+        print(f"{name, age} har lagts till i listan.")
 
     elif user_choice == "2":
         print("\n > Listing all students")
@@ -72,4 +68,3 @@ while menu_active:
 
     else:
         print("Ogiltigt val")
-
